@@ -63,20 +63,27 @@ open up you local host and port
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-MLFLOW_TRACKING_URI=https://github.com/Vvren2022/end-to-end-ml-project-with-mlflow \
-MLFLOW_TRACKING_USERNAME=Vvren2022 \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
-python script.py
+import dagshub
+dagshub.init(repo_owner='Vvren2022', repo_name='end-to-end-ml-project-with-mlflow', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
 
 Run this to export as env variables:
 
 ```bash
 
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/End-to-end-Machine-Learning-Project-with-MLflow.mlflow
+# export MLFLOW_TRACKING_URI=https://dagshub.com/Vvren2022/end-to-end-ml-project-with-mlflow.mlflow
+set MLFLOW_TRACKING_URI=https://dagshub.com/Vvren2022/end-to-end-ml-project-with-mlflow.mlflow
 
-export MLFLOW_TRACKING_USERNAME=Vvren2022 
 
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
+# export MLFLOW_TRACKING_USERNAME=Vvren2022 
+set MLFLOW_TRACKING_USERNAME=Vvren2022
+
+# export MLFLOW_TRACKING_PASSWORD=d376d530b69576481e20db9a88cfecf9482c21ce
+set MLFLOW_TRACKING_PASSWORD=d376d530b69576481e20db9a88cfecf9482c21ce
 
 ```
 
