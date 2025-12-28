@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "end_to_end_ml_project"
+version = "0.0.1"
+description = "end-to-end ml project with mlflow"
+authors = [{ name = "Vvren2022" }]
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = []
